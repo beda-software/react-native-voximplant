@@ -14,6 +14,7 @@ import ClientEvents from './ClientEvents';
 import Call from './../call/Call';
 import Endpoint from './../call/Endpoint';
 import CallManager from "../call/CallManager";
+import MessagingShared from "../messaging/MessagingShared";
 
 const ClientModule = NativeModules.VIClientModule;
 
@@ -190,6 +191,7 @@ export default class Client {
         return new Promise((resolve, reject) => {
             let loginResult = (event) => {
                 if (event.result) {
+                    MessagingShared.getInstance().setCurrentUser(username);
                     resolve(event);
                 } else {
                     reject(event);
@@ -215,6 +217,7 @@ export default class Client {
         return new Promise((resolve, reject) => {
             let loginResult = (event) => {
                 if (event.result) {
+                    MessagingShared.getInstance().setCurrentUser(username);
                     resolve(event);
                 } else {
                     reject(event);
@@ -237,6 +240,7 @@ export default class Client {
         return new Promise((resolve, reject) => {
             let loginResult = (event) => {
                 if (event.result) {
+                    MessagingShared.getInstance().setCurrentUser(username);
                     resolve(event);
                 } else {
                     reject(event);
@@ -470,6 +474,7 @@ export default class Client {
      * @private
      */
     _onConnectionClosed = (event) => {
+        MessagingShared.getInstance().setCurrentUser(null);
         this._emit(ClientEvents.ConnectionClosed, event);
     };
 

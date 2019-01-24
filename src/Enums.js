@@ -185,3 +185,42 @@ export const RequestAudioFocusMode = {
      */
     REQUEST_ON_CALL_CONNECTED : 'REQUEST_ON_CALL_CONNECTED'
 };
+
+/**
+ * @memberOf Voximplant.Messaging
+ * @type {{getUser: string}}
+ */
+export const MessengerAction = {
+    addParticipants: 'addParticipants',
+    createConversation : 'createConversation',
+    delivered : 'delivered',
+    editConversation: 'editConversation',
+    editMessage: 'editMessage',
+    editParticipants: 'editParticipants',
+    editUser : 'editUser',
+    getConversation : 'getConversation',
+    getConversations : 'getConversations',
+    getUser : 'getUser',
+    joinConversation: 'joinConversation',
+    leaveConversation: 'leaveConversation',
+    manageNotifications : 'manageNotifications',
+    read: 'read',
+    removeConversation : 'removeConversation',
+    removeMessage: 'removeMessage',
+    removeParticipants: 'removeParticipants',
+    retransmitEvents : 'retransmitEvents',
+    sendMessage : 'sendMessage',
+    setStatus : 'setStatus',
+    subscribe : 'subscribe',
+    typing : 'typing',
+    unsubscribe : 'unsubscribe'
+};
+
+/**
+ * @memberOf Voximplant.Messaging
+ * @type {{EditMessage: string, SendMessage: string}}
+ */
+export const MessengerNotifications = {
+    EditMessage : 'EditMessage',
+    SendMessage : 'SendMessage'
+};
